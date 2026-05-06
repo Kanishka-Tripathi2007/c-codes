@@ -1,0 +1,21 @@
+void bfs(int V, vector<int> adj[]) {
+    vector<int> visited(V,0);
+    queue<int> q;
+
+    q.push(0);
+    visited[0] = 1;
+
+    while(!q.empty()) {
+        int node = q.front();
+        q.pop();
+
+        cout << node << " ";
+
+        for(int nbr : adj[node]) {
+            if(!visited[nbr]) {
+                visited[nbr] = 1;
+                q.push(nbr);
+            }
+        }
+    }
+}
