@@ -1,0 +1,125 @@
+// Problem 1: Maximum Reachable Value
+
+#include <bits/stdc++.h>
+using namespace std;
+
+class Solution1 {
+public:
+    vector<int> maxValue(vector<int>& nums) {
+
+        int n = nums.size();
+
+        vector<int> prefixMax(n), suffixMin(n);
+
+        prefixMax[0] = nums[0];
+
+        for (int i = 1; i < n; i++) {
+            prefixMax[i] = max(prefixMax[i - 1], nums[i]);
+        }
+
+        suffixMin[n - 1] = nums[n - 1];
+
+        for (int i = n - 2; i >= 0; i--) {
+            suffixMin[i] = min(suffixMin[i + 1], nums[i]);
+        }
+
+        vector<int> ans(n);
+
+        int start = 0;
+
+        for (int i = 0; i < n - 1; i++) {
+
+            if (prefixMax[i] <= suffixMin[i + 1]) {
+
+                int mx = nums[start];
+
+                for (int j = start; j <= i; j++) {
+                    mx = max(mx, nums[j]);
+                }
+
+                for (int j = start; j <= i; j++) {
+                    ans[j] = mx;
+                }
+
+                start = i + 1;
+            }
+        }
+
+        int mx = nums[start];
+
+        for (int j = start; j < n; j++) {
+            mx = max(mx, nums[j]);
+        }
+
+        for (int j = start; j < n; j++) {
+            ans[j] = mx;
+        }
+
+        return ans;
+    }
+};
+
+
+// Problem 2: Special Triplets
+
+class Solution2 {
+public:
+    int specialTriplets(vector<int>& nums) {
+
+        const int MOD = 1e9 + 7;
+
+        unordered_map<long long, long long> left, right;
+
+        for (int x : nums) {
+            right[x]++;
+        }
+
+        long long ans = 0;
+
+        for (int j = 0; j < nums.size(); j++) {
+
+            right[nums[j]]--;
+
+            long long target = 1LL * nums[j] * 2;
+
+            long long leftCount = left[target];
+            long long rightCount = right[target];
+
+            ans = (ans + (leftCount * rightCount) % MOD) % MOD;
+
+            left[nums[j]]++;
+        }
+
+        return (int)ans;
+    }
+};
+
+
+int main() {
+
+    // Problem 1 Test
+    vector<int> nums1 = {2, 3, 1};
+
+    Solution1 s1;
+
+    vector<int> result = s1.maxValue(nums1);
+
+    cout << "Maximum Reachable Values: ";
+
+    for (int x : result) {
+        cout << x << " ";
+    }
+
+    cout << endl;
+
+
+    // Problem 2 Test
+    vector<int> nums2 = {6, 3, 6};
+
+    Solution2 s2;
+
+    cout << "Special Triplets Count: "
+         << s2.specialTriplets(nums2);
+
+    return 0;
+}
