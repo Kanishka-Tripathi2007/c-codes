@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void levelOrder(vector<vector<int>>& adj,int start){
+    queue<int> q;
+    vector<int> vis(adj.size(),0);
+
+    q.push(start);
+    vis[start]=1;
+
+    while(!q.empty()){
+        int node=q.front(); q.pop();
+        cout<<node<<" ";
+
+        for(int x:adj[node]){
+            if(!vis[x]){
+                vis[x]=1;
+                q.push(x);
+            }
+        }
+    }
+}
