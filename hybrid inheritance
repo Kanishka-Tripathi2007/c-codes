@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+
+// Base Class
+class A {
+protected:
+    int x;
+
+public:
+    void input() {
+        cout << "\nEnter number: ";
+        cin >> x;
+    }
+};
+// Derived Class B (from A)
+class B : public A {
+protected:
+    int y;
+
+public:
+    void getdata() {
+        cout << "\nEnter another number: ";
+        cin >> y;
+    }
+};
+// Derived Class C (from B) → Multilevel
+class C : public B {
+public:
+    void multiply() {
+        cout << "\nMultiplication = " << x * y;
+    }
+};
+
+// Another Derived Class D (from A) → Hierarchical
+class D : public A {
+public:
+    void square() {
+        cout << "\nSquare = " << x * x;
+    }
+};
+int main() {
+    C obj1;
+    D obj2;
+
+    // Multilevel part (A → B → C)
+    obj1.input();      // from A
+    obj1.getdata();    // from B
+    obj1.multiply();   // from C
+
+    // Hierarchical part (A → D)
+    obj2.input();      // from A
+    obj2.square();     // from D
+
+    return 0;
+}
