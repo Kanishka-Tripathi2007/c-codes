@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+
+class A {
+protected:
+    int x;
+
+public:
+    void input() {
+        cout << "\nEnter number: ";
+        cin >> x;
+    }
+};
+class B : public A {
+    int y;
+
+public:
+    void getdata() {
+        cout << "\nEnter another number: ";
+        cin >> y;
+    }
+
+    void putdata() {
+        cout << "\nMultiplication = " << x * y;
+    }
+};
+int main() {
+    B obj;
+
+    obj.input();
+    obj.getdata();
+    obj.putdata();
+
+    return 0;
+}
