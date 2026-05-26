@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+class mother {
+protected :
+    int x;
+public :
+    void inputmother(){
+    cout<<"\n enter a number:";
+    cin>>x;
+    }
+};
+class father {
+protected :
+    int y;
+public :
+    void inputfather (){
+    cout <<"\n enter second number :";
+    cin>>y;
+    }
+};
+class child : public mother , public father {
+public:
+    void display(){
+    cout<<"\n Addition ="<<x+y;
+
+    }};
+    int main (){
+    child obj;
+    obj.inputmother ();
+    obj.inputfather();
+    obj.display();
+    return 0;
+    }
