@@ -1,0 +1,34 @@
+#include <iostream>
+using namespace std;
+
+class Multiply
+{
+private:
+    int a, b;
+
+public:
+    void getData()
+    {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+    }
+
+
+    friend int product(Multiply m);
+};
+
+
+int product(Multiply m) ;
+{
+    return m.a * m.b;
+}
+
+int main()
+{
+    Multiply obj;
+    obj.getData();
+
+    cout << "Multiplication = " << product(obj);
+
+    return 0;
+}
