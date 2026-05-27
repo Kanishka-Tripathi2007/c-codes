@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+
+// Base Class
+class A {
+protected:
+    int x;
+
+public:
+    void input() {
+        cout << "\nEnter number: ";
+        cin >> x;
+    }
+};
+// Derived Class B (inherits A)
+class B : public A {
+protected:
+    int y;
+
+public:
+    void getdata() {
+        cout << "\nEnter another number: ";
+        cin >> y;
+    }
+};
+
+// Derived Class C (inherits B)
+class C : public B   {
+public:
+    void putdata() {
+        cout << "\nMultiplication = " << x * y;
+    }
+};
+
+int main() {
+    C obj;
+
+    obj.input();     // from A
+    obj.getdata();   // from B
+    obj.putdata();   // from C
+
+    return 0;
+}
