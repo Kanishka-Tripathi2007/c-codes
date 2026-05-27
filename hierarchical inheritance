@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+
+// Base Class
+class A {
+protected:
+    int x;
+
+public:
+    void input() {
+        cout << "\nEnter number: ";
+        cin >> x;
+    }
+};
+// Derived Class B
+class B : public A {
+public:
+    void square() {
+        cout << "\nSquare = " << x * x;
+    }
+};
+
+// Derived Class C
+class C : public A {
+public:
+    void cube() {
+        cout << "\nCube = " << x * x * x;
+    }
+};
+int main() {
+    B obj1;
+    C obj2;
+
+    obj1.input();   // input for B
+    obj1.square();
+
+    obj2.input();   // input for C
+    obj2.cube();
+
+    return 0;
+}
