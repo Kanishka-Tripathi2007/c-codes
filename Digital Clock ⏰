@@ -1,0 +1,27 @@
+```cpp id="cl91zx"
+#include <iostream>
+#include <windows.h>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    while (true) {
+        system("cls");
+
+        time_t now = time(0);
+        tm *ltm = localtime(&now);
+
+        cout << "Digital Clock\n";
+        cout << "--------------\n";
+
+        cout << ltm->tm_hour << ":"
+             << ltm->tm_min << ":"
+             << ltm->tm_sec << endl;
+
+        Sleep(1000);
+    }
+
+    return 0;
+}
+```
