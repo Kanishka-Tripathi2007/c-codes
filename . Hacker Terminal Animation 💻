@@ -1,0 +1,23 @@
+```cpp id="hk72er"
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+int main() {
+    string text[] = {
+        "Initializing Hack...",
+        "Connecting to Server...",
+        "Access Granted...",
+        "Downloading Files...",
+        "Complete."
+    };
+
+    for (int i = 0; i < 5; i++) {
+        cout << text[i] << endl;
+        Sleep(1500);
+    }
+
+    return 0;
+}
+```
