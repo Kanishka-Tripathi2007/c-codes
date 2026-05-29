@@ -1,0 +1,32 @@
+
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+using namespace chrono;
+
+int main() {
+    string text = "coding is fun";
+    string input;
+
+    cout << "Type this sentence:\n";
+    cout << text << endl;
+
+    auto start = high_resolution_clock::now();
+
+    getline(cin, input);
+
+    auto stop = high_resolution_clock::now();
+
+    auto duration = duration_cast<seconds>(stop - start);
+
+    if (input == text) {
+        cout << "Correct!\n";
+        cout << "Time Taken: " << duration.count() << " seconds\n";
+    } else {
+        cout << "Typing Mistake!\n";
+    }
+
+    return 0;
+}
+```
