@@ -1,0 +1,19 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    string text;
+
+    cout << "Enter Text: ";
+    getline(cin, text);
+
+    for(char &c : text)
+        c += 3;
+
+    cout << "Encrypted: " << text;
+
+    return 0;
+}
+```
