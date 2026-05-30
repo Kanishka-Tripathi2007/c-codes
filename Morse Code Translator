@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include <map>
+
+using namespace std;
+
+int main() {
+    map<char,string> morse = {
+        {'A',".-"}, {'B',"-..."}, {'C',"-.-."},
+        {'D',"-.."}, {'E',"."}, {'F',"..-."}
+    };
+
+    string text;
+    cout << "Enter Text: ";
+    cin >> text;
+
+    for(char c : text) {
+        cout << morse[toupper(c)] << " ";
+    }
+
+    return 0;
+}
+```
