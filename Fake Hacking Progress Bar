@@ -1,0 +1,19 @@
+
+#include <iostream>
+#include <windows.h>
+
+using namespace std;
+
+int main() {
+    cout << "Initializing...\n";
+
+    for(int i = 0; i <= 100; i++) {
+        cout << "\rProgress: " << i << "%";
+        Sleep(50);
+    }
+
+    cout << "\nAccess Granted!\n";
+
+    return 0;
+}
+
