@@ -1,0 +1,18 @@
+
+#include <iostream>
+#include <bitset>
+using namespace std;
+
+int main() {
+    string text;
+    cout << "Enter text: ";
+    getline(cin, text);
+
+    cout << "\nBinary:\n";
+    for(char c : text) {
+        cout << bitset<8>(c) << " ";
+    }
+
+    return 0;
+}
+```
