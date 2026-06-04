@@ -13,12 +13,14 @@ This repository contains a collection of C++ programs created for learning progr
 - Searching & Sorting
 - LeetCode Solutions
 - Logic Building Problems
+- building projects
 
 ## Purpose
 - Strengthen C++ programming skills
 - Practice DSA problems
 - Prepare for coding interviews
 - Maintain a structured coding portfolio
+- mastering c++
 
 ## Language Used
 - C++
@@ -28,4 +30,4 @@ This repository contains a collection of C++ programs created for learning progr
 - Git & GitHub
 
 ## Author
-Kanishka Tripathi
+Kanishka Tripathi 
