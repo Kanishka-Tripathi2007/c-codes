@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Example {
+public:
+    int x;
+
+protected:
+    int y;
+
+private:
+    int z;
+
+public:
+    Example() {
+        x = 10;
+        y = 20;
+        z = 30;
+    }
+
+    void display() {
+        cout << "Public: " << x << endl;
+        cout << "Protected: " << y << endl;
+        cout << "Private: " << z << endl;
+    }
+};
+
+int main() {
+    Example obj;
+    obj.x = 100;   // Allowed
+    // obj.y = 200; // Error
+    // obj.z = 300; // Error
+
+    obj.display();
+
+    return 0;
+}
