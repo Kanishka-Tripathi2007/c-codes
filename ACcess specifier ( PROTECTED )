@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Parent {
+protected:
+    int age;
+};
+
+class Child : public Parent {
+public:
+    void setAge(int a) {
+        age = a;
+    }
+
+    void displayAge() {
+        cout << "Age: " << age << endl;
+    }
+};
+
+int main() {
+    Child c;
+    c.setAge(25);
+    c.displayAge();
+
+    return 0;
+}
