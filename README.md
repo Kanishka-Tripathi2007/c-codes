@@ -13,7 +13,7 @@ This repository contains a collection of C++ programs created for learning progr
 - Searching & Sorting
 - LeetCode Solutions
 - Logic Building Problems
-- building projects
+
 
 ## Purpose
 - Strengthen C++ programming skills
